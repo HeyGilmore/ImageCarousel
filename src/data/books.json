@@ -1,0 +1,92 @@
+[
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "summary": "A novel set in the American South during the 1930s, exploring racial injustice and moral growth through the eyes of young Scout Finch.",
+      "rating": 4.9,
+      "genre": "Fiction",
+      "publicationYear": 1960,
+      "ISBN": "978-0061120084"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "summary": "A dystopian novel set in a totalitarian society under constant surveillance, where individual freedom is suppressed.",
+      "rating": 4.8,
+      "genre": "Dystopian",
+      "publicationYear": 1949,
+      "ISBN": "978-0451524935"
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "summary": "A critique of the American Dream, this novel follows Jay Gatsby's pursuit of wealth and love in the Roaring Twenties.",
+      "rating": 4.7,
+      "genre": "Classic",
+      "publicationYear": 1925,
+      "ISBN": "978-0743273565"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "summary": "A romantic novel that explores the societal pressures and romantic entanglements of Elizabeth Bennet and Mr. Darcy.",
+      "rating": 4.8,
+      "genre": "Romance",
+      "publicationYear": 1813,
+      "ISBN": "978-1503290563"
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "summary": "A coming-of-age story that delves into teenage angst and rebellion through the perspective of Holden Caulfield.",
+      "rating": 4.5,
+      "genre": "Literary Fiction",
+      "publicationYear": 1951,
+      "ISBN": "978-0316769488"
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "summary": "Bilbo Baggins embarks on an epic adventure with dwarves to reclaim their treasure from the dragon Smaug.",
+      "rating": 4.9,
+      "genre": "Fantasy",
+      "publicationYear": 1937,
+      "ISBN": "978-0547928227"
+    },
+    {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "summary": "A philosophical novel following Santiago, a shepherd, on his journey to find treasure and discover his personal legend.",
+      "rating": 4.6,
+      "genre": "Fiction",
+      "publicationYear": 1988,
+      "ISBN": "978-0061122415"
+    },
+    {
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "summary": "Harry discovers he's a wizard and begins his magical education at Hogwarts, uncovering the truth about his parents' deaths.",
+      "rating": 4.9,
+      "genre": "Fantasy",
+      "publicationYear": 1997,
+      "ISBN": "978-0590353427"
+    },
+    {
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "summary": "A post-apocalyptic tale of a father and son journeying through a desolate world, clinging to their humanity.",
+      "rating": 4.7,
+      "genre": "Post-Apocalyptic Fiction",
+      "publicationYear": 2006,
+      "ISBN": "978-0307387899"
+    },
+    {
+      "title": "The Book Thief",
+      "author": "Markus Zusak",
+      "summary": "Set in Nazi Germany, this novel follows young Liesel Meminger as she discovers the power of words and books during wartime.",
+      "rating": 4.8,
+      "genre": "Historical Fiction",
+      "publicationYear": 2005,
+      "ISBN": "978-0375842207"
+    }
+  ]
