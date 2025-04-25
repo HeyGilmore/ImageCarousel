@@ -1,6 +1,7 @@
 export default function creationOfBookCards(data) {
   return data.map((book) => {
     const card = document.createElement("div");
+    card.classList.add("carousel-item");
     // Style the card
     Object.assign(card.style, {
       flexShrink: "0",
