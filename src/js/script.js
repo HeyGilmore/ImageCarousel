@@ -1,6 +1,7 @@
 import "../css/reset.css";
 import "../css/styles.css";
-import card from "./cards.js";
+import creationOfBookCards from "./cards.js";
+import data from "../data/books.json";
 
 //-- Calling DOM
 const mainSection = document.getElementById("mainSection");
@@ -15,20 +16,18 @@ Object.assign(mainSection.style, {
 
 //-- Creation of new Div
 const newDiv = document.createElement("div");
-// Style
 Object.assign(newDiv.style, {
-  width: "80%",
-  height: "445px",
+  width: "95%",
+  padding: "35px",
   backgroundColor: "#272838",
-  overflow: "scroll",
+  overflowX: "scroll",
   display: "flex",
-  justifyContent: "Center",
-  flexDirection: "Column",
-  padding: "0 10px",
+  gap: "2em",
 });
 
-// Adding Cards
-newDiv.appendChild(card());
+// Generate cards and append them directly
+const cards = creationOfBookCards(data);
+cards.forEach((card) => newDiv.appendChild(card));
 
-//-- Add new Div to DOM
+// Add new Div to DOM
 mainSection.appendChild(newDiv);
