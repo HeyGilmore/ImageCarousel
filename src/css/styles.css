@@ -5,10 +5,11 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #f9f8f8;
+  background-color: #eb9486;
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  color: #272838;
 }
 h1,
 h2,
@@ -26,7 +27,7 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 10px 0;
-  background-color: #272838;
+  background-color: #7e7f9a;
   color: #f9f8f8;
   text-align: center;
 }
