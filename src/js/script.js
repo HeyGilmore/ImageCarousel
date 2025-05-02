@@ -1,106 +1,64 @@
+// Import statements (unchanged)
 import "../css/reset.css";
 import "../css/styles.css";
 import creationOfBookCards from "./cards.js";
+import creationOfButtons from "./buttons.js";
 import data from "../data/books.json";
-import buttons from "./buttons.js";
 import left from "../img/left.svg";
 import right from "../img/right.svg";
 
-//-- Calling DOM
+// DOM Setup
 const mainSection = document.getElementById("mainSection");
-// Style
 Object.assign(mainSection.style, {
-  height: "100%",
-  width: "100%",
   display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
+  backgroundColor: "#272838",
   position: "relative",
+  padding: "40px 80px",
+  marginTop: "5em",
+  overflow: "hidden", // Ensure main section hides overflow
 });
 
-//-- Creation of new Div
-const newDiv = document.createElement("div");
-// Add class
-newDiv.classList.add("carousel-track");
-// style
-Object.assign(newDiv.style, {
-  width: "95%",
-  padding: "40px 80px",
-  backgroundColor: "#272838",
-  overflowX: "scroll",
+// Carousel Track Setup
+const carouselTrack = document.createElement("div");
+carouselTrack.classList.add("carousel-track");
+Object.assign(carouselTrack.style, {
+  width: "100%", // Full width of the container
   display: "flex",
   gap: "2em",
+  transition: "transform 0.5s ease",
 });
 
-// Create cards and add them to newDiv
+// Create cards and add them to the carousel
 const cards = creationOfBookCards(data);
-cards.forEach((card) => newDiv.appendChild(card));
+cards.forEach((card) => carouselTrack.appendChild(card));
+mainSection.appendChild(carouselTrack);
 
-// Add new Div to DOM
-mainSection.appendChild(newDiv);
+//---------- Creation of Button
+const leftButton = creationOfButtons("left", left);
+const rightButton = creationOfButtons("right", right);
+mainSection.appendChild(leftButton);
+mainSection.appendChild(rightButton);
 
-//----- Left button
-const leftButton = document.createElement("button");
-// Add class
-leftButton.classList.add("carousel-button", "left");
-Object.assign(leftButton.style, {
-  position: "absolute",
-  top: "75%",
-  left: "40px", // Adjust as needed
-  transform: "translateY(-50%)",
-  border: "none",
-  padding: "0",
-  cursor: "pointer",
-  zIndex: "10",
-  height: "auto",
-  background: "#F3DE8A",
-  borderRadius: "12px",
-  padding: "5px",
+// Track and Items
+const items = Array.from(carouselTrack.children);
+let currentIndex = 0;
+
+// Button Logic
+[leftButton, rightButton].forEach((button) => {
+  button.addEventListener("click", () => {
+    const direction = button.classList.contains("left") ? -1 : 1;
+    currentIndex += direction;
+
+    // Wrap-around logic
+    if (currentIndex < 0) currentIndex = items.length - 1;
+    if (currentIndex >= items.length) currentIndex = 0;
+
+    // Update track transform
+    const itemWidth =
+      items[0].offsetWidth +
+      parseFloat(getComputedStyle(items[0]).marginRight || 0);
+    carouselTrack.style.transform = `translateX(${
+      -currentIndex * itemWidth
+    }px)`;
+  });
 });
-// Add Left Image
-const leftArrow = document.createElement("img");
-leftArrow.src = left; // Ensure this points to the correct image source
-Object.assign(leftArrow.style, {
-  height: "80px", // Match button height
-  width: "80px",
-  display: "block", // Remove extra spacing
-});
-
-// Append the image to the button
-leftButton.appendChild(leftArrow);
-
-// Append the button to the parent container
-newDiv.appendChild(leftButton);
-
-//----- right button
-const rightButton = document.createElement("button");
-// Add class
-rightButton.classList.add("carousel-button", "left");
-Object.assign(rightButton.style, {
-  position: "absolute",
-  top: "75%",
-  right: "40px", // Adjust as needed
-  transform: "translateY(-50%)",
-  border: "none",
-  padding: "0",
-  cursor: "pointer",
-  zIndex: "10",
-  height: "auto",
-  background: "#F3DE8A",
-  borderRadius: "12px",
-  padding: "5px",
-});
-// Add Left Image
-const rightArrow = document.createElement("img");
-rightArrow.src = right; // Ensure this points to the correct image source
-Object.assign(rightArrow.style, {
-  height: "80px", // Match button height
-  width: "80px",
-  display: "block", // Remove extra spacing
-});
-
-// Append the image to the button
-rightButton.appendChild(rightArrow);
-
-// Append the button to the parent container
-newDiv.appendChild(rightButton);
